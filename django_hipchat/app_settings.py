@@ -3,7 +3,7 @@ from django.conf import settings
 def setting(suffix, default):
     return getattr(settings, 'HIPCHAT_%s' % suffix, default)
 
-ENABLED = setting('ENABLED', True)
+ENABLED = setting('ENABLED', not settings.DEBUG)
 BACKEND = setting('BACKEND', 'django_hipchat.backends.urllib_backend')
 AUTH_TOKEN = setting('AUTH_TOKEN', None)
 MESSAGE_FROM = setting('MESSAGE_FROM', None)
