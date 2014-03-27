@@ -1,5 +1,5 @@
 """
-.. image:: ../images/logos/thread.png
+.. image:: ../images/thread.png
    :align: right
 
 ==============
