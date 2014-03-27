@@ -14,7 +14,6 @@ release = ''
 copyright = '2012, 2013, 2014 Thread, Inc.'
 
 html_logo = 'thread.png'
-html_theme = 'nature'
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx']
 html_title = "%s documentation" % project
 master_doc = 'index'
