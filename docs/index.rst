@@ -1,6 +1,3 @@
-.. image:: ../images/thread.png
-   :align: right
-
 ==============
 django-hipchat
 ==============
