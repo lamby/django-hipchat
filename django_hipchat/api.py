@@ -11,49 +11,6 @@ from .utils import from_dotted_path
 backend_fn = from_dotted_path(app_settings.BACKEND)
 
 def hipchat_message(template, context=None, fail_silently=app_settings.FAIL_SILENTLY):
-    """
-
-     * Add ``django_hipchat`` to ``INSTALLED_APPS``
-
-     * Ensure ``django.template.loaders.app_directories.Loader`` is in your
-       ``TEMPLATE_LOADERS``.
-
-    >>> from django_hipchat.api import message
-    >>> message("path/to/my_message.hipchat", {
-        'foo': Foo.objects.get(pk=17),
-    })
-
-    path/to/my_message.hipchat::
-
-        {% extends django_hipchat %}
-
-        {% block room_id %}
-        Room to spam
-        {% endblock %}
-
-        {% block message %}
-        Message text here: {{ foo.bar|urlize }}
-        {% endblock %}
-
-        {% block color %}
-        red
-        {% endblock %}
-
-    Required blocks:
-
-     * message
-
-    Required blocks which can be defaulted globally and overriden:
-
-     * auth_token
-     * room_id
-     * from
-
-    Optional blocks:
-
-     * color
-    """
-
     if not app_settings.ENABLED:
         return
 
