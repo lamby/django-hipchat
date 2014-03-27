@@ -1,4 +1,3 @@
-"""
 .. image:: ../images/thread.png
    :align: right
 
@@ -163,6 +162,3 @@ View/download code
 
 File a bug
   https://github.com/thread/django-hipchat/issues
-"""
-
-from .api import hipchat_message
