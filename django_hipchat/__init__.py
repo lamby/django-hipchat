@@ -1,7 +1,7 @@
 """
 .. image:: images/thread.png
    :align: right
-   :target: http://code.thread.com/
+   :target: http://dev.thread.com/
 
 ==============
 django-hipchat
@@ -169,9 +169,9 @@ File a bug
 
 .. figure:: images/thread.png
    :align: center
-   :target: http://code.thread.com/
+   :target: http://dev.thread.com/
 
-   `See more open source projects from Thread.com <http://code.thread.com/>`_
+   `See more open source projects from Thread.com <http://dev.thread.com/>`_
 """
 
 from .api import hipchat_message
