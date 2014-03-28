@@ -13,9 +13,10 @@ version = ''
 release = ''
 copyright = '2012, 2013, 2014 Thread, Inc.'
 
-html_logo = 'images/thread.png'
+html_logo = '_static/thread.png'
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx']
 html_title = "%s documentation" % project
+html_static_path = ['_static']
 master_doc = 'index'
 exclude_trees = ['_build']
 templates_path = ['_templates']
