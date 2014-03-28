@@ -6,16 +6,9 @@ django-hipchat
 Seamless HipChat integration for Django
 ---------------------------------------
 
-Contents:
-
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
+
+    index
 
 .. automodule:: django_hipchat
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
-* :ref:`glossary`
