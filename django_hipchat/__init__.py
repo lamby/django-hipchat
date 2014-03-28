@@ -1,6 +1,7 @@
 """
 .. image:: images/thread.png
    :align: right
+   :target: http://code.thread.com/
 
 ==============
 django-hipchat
