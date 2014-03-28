@@ -164,6 +164,13 @@ View/download code
 
 File a bug
   https://github.com/thread/django-hipchat/issues
+
+
+.. figure:: images/thread.png
+   :align: center
+   :target: http://code.thread.com/
+
+   `See more open source projects from Thread.com <http://code.thread.com/>`_.
 """
 
 from .api import hipchat_message
