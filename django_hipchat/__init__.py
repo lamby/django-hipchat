@@ -1,4 +1,12 @@
 """
+==============
+django-hipchat
+==============
+
+---------------------------------------
+Seamless HipChat integration for Django
+---------------------------------------
+
 This project provides easy-to-use integration between
 `Django <http://www.djangoproject.com/>`_ projects and the
 `HipChat <https://www.hipchat.com>`_ group chat and IM tool.
