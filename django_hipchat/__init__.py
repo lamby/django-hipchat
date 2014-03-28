@@ -165,6 +165,7 @@ View/download code
 File a bug
   https://github.com/thread/django-hipchat/issues
 
+----
 
 .. figure:: images/thread.png
    :align: center
