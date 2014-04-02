@@ -91,14 +91,14 @@ A string pointing to the eventual method that will actually send the message to
 the HipChat API. The default backend will send the message using the Python
 ``urllib`` library.
 
-Use this setting to globally disable sending messages to HipChat. You may need
-to set this to ``django_hipchat.backends.disabled`` when running tests or in
-your staging environment if you do not already set ``DEBUG = True`` in these
-environments.
+You can use this setting to globally disable sending messages to HipChat. You
+may need to set this to ``django_hipchat.backends.disabled`` when running tests
+or in your staging environment if you do not already set ``DEBUG = True`` in
+these environments.
 
-If you are using a queue processor, you can wrap the supplied
-``urllib`` backend so that messages are sent asynchronously and do not delay
-processing of requests::
+If you are using a queue processor, you can wrap the supplied ``urllib``
+backend so that messages are sent asynchronously and do not delay processing of
+requests::
 
     from django_hipchat.backends import urllib as urllib_backend
     from django_lightweight_queue.task import task
