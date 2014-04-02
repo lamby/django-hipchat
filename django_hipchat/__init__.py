@@ -82,14 +82,33 @@ Optional blocks:
 Configuration
 -------------
 
-``HIPCHAT_ENABLED``
+``HIPCHAT_BACKEND``
 ~~~~~~~~~~~~~~~~~~~
 
-Default: ``not settings.DEBUG``
+Default: ``"django_hipchat.backends.urllib"`` (``"django_hipchat.backends.disabled"`` if ``settings.DEBUG``)
+
+A string pointing to the eventual method that will actually send the message to
+the HipChat API. The default backend will send the message using the Python
+``urllib`` library.
 
 Use this setting to globally disable sending messages to HipChat. You may need
-to set this to ``False`` when running tests or in your staging environment if
-you do not already set ``DEBUG = True`` in these environments
+to set this to ``django_hipchat.backends.disabled`` when running tests or in
+your staging environment if you do not already set ``DEBUG = True`` in these
+environments.
+
+If you are using a queue processor, you can wrap the supplied
+``urllib`` backend so that messages are sent asynchronously and do not delay
+processing of requests::
+
+    from django_hipchat.backends import urllib as urllib_backend
+    from django_lightweight_queue.task import task
+
+    @task()
+    def queued_hipchat_backend(url, fail_silently):
+        urllib_backend(url, fail_silently)
+
+This would be enabled by setting ``HIPCHAT_BACKEND`` to (for example)
+``path.to.tasks.queued_hipchat_backend``.
 
 ``HIPCHAT_AUTH_TOKEN``
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -129,28 +148,6 @@ Whether errors should be silenced or raised to the user. As HipChat messages
 are often for administrators of a site and not the users, masking temporary
 errors with the HipChat API may be desired.
 
-``HIPCHAT_BACKEND``
-~~~~~~~~~~~~~~~~~~~
-
-Default: ``"django_hipchat.backends.urllib"``
-
-A string pointing to the eventual method that will actually send the message to
-the HipChat API. The default backend will send the message using the Python
-``urllib`` library.
-
-If you are using a queue processor, you can wrap the supplied
-``urllib`` backend so that messages are sent asynchronously and do not delay
-processing of requests::
-
-    from django_hipchat.backends import urllib as urllib_backend
-    from django_lightweight_queue.task import task
-
-    @task()
-    def queued_hipchat_backend(url, fail_silently):
-        urllib_backend(url, fail_silently)
-
-This would be enabled by setting ``HIPCHAT_BACKEND`` to (for example)
-``path.to.tasks.queued_hipchat_backend``.
 
 
 Links

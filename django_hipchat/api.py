@@ -11,9 +11,6 @@ from .utils import from_dotted_path
 backend_fn = from_dotted_path(app_settings.BACKEND)
 
 def hipchat_message(template, context=None, fail_silently=app_settings.FAIL_SILENTLY):
-    if not app_settings.ENABLED:
-        return
-
     context = Context(context or {})
 
     context['settings'] = settings

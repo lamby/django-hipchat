@@ -14,3 +14,6 @@ def console(url, data, fail_silently):
     print "-" * 80
     print "django-hipchat:"
     pprint.pprint(data, indent=4)
+
+def disabled(url, data, fail_silently):
+    pass
