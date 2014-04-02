@@ -11,9 +11,9 @@ def urllib(url, data, fail_silently):
             raise
 
 def console(url, data, fail_silently):
-    print "-" * 80
-    print "django-hipchat:"
+    print "I: HipChat message:"
     pprint.pprint(data, indent=4)
+    print "-" * 79
 
 def disabled(url, data, fail_silently):
     pass

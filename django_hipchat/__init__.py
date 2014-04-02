@@ -110,6 +110,10 @@ requests::
 This would be enabled by setting ``HIPCHAT_BACKEND`` to (for example)
 ``path.to.tasks.queued_hipchat_backend``.
 
+You can also use the supplied ``django_hipchat.backends.console`` when
+developing. Instead of actually sending the message to HipChat, the console
+backend just writes the emails that would be sent to standard output.
+
 ``HIPCHAT_AUTH_TOKEN``
 ~~~~~~~~~~~~~~~~~~~~~~
 
