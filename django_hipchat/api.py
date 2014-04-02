@@ -57,4 +57,4 @@ def hipchat_message(template, context=None, fail_silently=app_settings.FAIL_SILE
     backend_fn('%s?%s' % (
         'https://api.hipchat.com/v1/rooms/message',
         urllib.urlencode(data),
-    ), fail_silently)
+    ), data, fail_silently)
