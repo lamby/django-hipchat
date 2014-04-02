@@ -132,17 +132,17 @@ errors with the HipChat API may be desired.
 ``HIPCHAT_BACKEND``
 ~~~~~~~~~~~~~~~~~~~
 
-Default: ``"django_hipchat.backends.urllib_backend"``
+Default: ``"django_hipchat.backends.urllib"``
 
 A string pointing to the eventual method that will actually send the message to
 the HipChat API. The default backend will send the message using the Python
 ``urllib`` library.
 
 If you are using a queue processor, you can wrap the supplied
-``urllib_backend`` so that messages are sent asynchronously and do not delay
+``urllib`` backend so that messages are sent asynchronously and do not delay
 processing of requests::
 
-    from django_hipchat.backends import urllib_backend
+    from django_hipchat.backends import urllib as urllib_backend
     from django_lightweight_queue.task import task
 
     @task()

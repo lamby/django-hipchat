@@ -4,7 +4,7 @@ def setting(suffix, default):
     return getattr(settings, 'HIPCHAT_%s' % suffix, default)
 
 ENABLED = setting('ENABLED', not settings.DEBUG)
-BACKEND = setting('BACKEND', 'django_hipchat.backends.urllib_backend')
+BACKEND = setting('BACKEND', 'django_hipchat.backends.urllib')
 AUTH_TOKEN = setting('AUTH_TOKEN', None)
 MESSAGE_FROM = setting('MESSAGE_FROM', None)
 MESSAGE_ROOM = setting('MESSAGE_ROOM', None)

@@ -1,6 +1,6 @@
 import urllib2
 
-def urllib_backend(url, fail_silently):
+def urllib(url, fail_silently):
     request = urllib2.Request(url)
 
     try:
