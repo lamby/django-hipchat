@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 setup(
     name='django-hipchat',
 
-    version='1.0.1',
+    version='1.0.2',
     description="Provides easy-to-use integration between Django projects and "
         "the hipchat group chat and IM tool.",
 
