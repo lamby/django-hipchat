@@ -1,4 +1,4 @@
 django-hipchat
 ==============
 
-Documentation/homepage: https://django-hipchat.readthedocs.org/
+Documentation: See ``django_hipchat/__init__.py``.
