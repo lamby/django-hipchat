@@ -1,1 +1,0 @@
-.. automodule:: django_hipchat
