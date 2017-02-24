@@ -4,11 +4,11 @@ import urllib2
 from django.conf import settings
 from django.template import Context
 from django.template.loader import render_to_string
+from django.utils.module_loading import import_string
 
 from . import app_settings
-from .utils import from_dotted_path
 
-backend_fn = from_dotted_path(app_settings.BACKEND)
+backend_fn = import_string(app_settings.BACKEND)
 
 def hipchat_message(template, context=None, fail_silently=app_settings.FAIL_SILENTLY):
     context = Context(context or {})
