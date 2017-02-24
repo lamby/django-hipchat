@@ -1,5 +1,4 @@
 import urllib
-import urllib2
 
 from django.conf import settings
 from django.template import Context
