@@ -15,11 +15,10 @@ def hipchat_message(template, context=None, fail_silently=app_settings.FAIL_SILE
     context['settings'] = settings
 
     def render(component):
-        component_template = 'django_hipchat/%s' % component
-
-        return render_to_string(template, {
-            'django_hipchat': component_template,
-        }, context).strip().encode('utf8', 'ignore')
+        return render_to_string(template, dict(
+            context.flatten(),
+            django_hipchat='django_hipchat/%s' % component,
+        )).strip().encode('utf8', 'ignore')
 
     data = {
         'from': app_settings.MESSAGE_FROM,
